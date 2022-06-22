@@ -48,30 +48,6 @@
                     "inbound_nodes": []
                   },
                   {
-                    "class_name": "Normalization",
-                    "config": {
-                      "name": "normalization",
-                      "trainable": true,
-                      "dtype": "float32",
-                      "axis": [
-                        3
-                      ],
-                      "mean": null,
-                      "variance": null
-                    },
-                    "name": "normalization",
-                    "inbound_nodes": [
-                      [
-                        [
-                          "rescaling",
-                          0,
-                          0,
-                          {}
-                        ]
-                      ]
-                    ]
-                  },
-                  {
                     "class_name": "ZeroPadding2D",
                     "config": {
                       "name": "stem_conv_pad",
