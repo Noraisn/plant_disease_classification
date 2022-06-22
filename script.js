@@ -26,7 +26,7 @@ let pconf = document.querySelector('.box-result p')
          // here the data will be return.
         
 
-         
+
         // Initialize/Load model
         async function initialize() {
             let status = document.querySelector('.init_status')
@@ -42,9 +42,10 @@ let pconf = document.querySelector('.box-result p')
             let tensorImg =   tf.browser.fromPixels(img).resizeNearestNeighbor([200,200]).toFloat().expandDims();
             let tensorImg_scaled = tensorImg.div(offset)
             prediction = await model.predict(tensorImg_scaled).data();
-           
+            console.log('beforeFetchData')
             fetchData().then((data)=> 
                 {
+                    console.log('afterFetchData', data)
                     predicted_class = tf.argMax(prediction)
                     
                     class_idx = Array.from(predicted_class.dataSync())[0]
