@@ -101,7 +101,9 @@ let pconf = document.querySelector('.box-result p')
             img.setAttribute("src", "");
             }
 
+            console.log('beforeInit')
             initialize().then( () => { 
+                console.log('afterInit')
                 predict()
             })
         })
