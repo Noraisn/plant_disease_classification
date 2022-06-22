@@ -30,7 +30,7 @@ let pconf = document.querySelector('.box-result p')
         async function initialize() {
             let status = document.querySelector('.init_status')
             status.innerHTML = 'Loading Model .... <span class="fa fa-spinner fa-spin"></span>'
-            model = await tf.loadLayersModel('./tensorflowjs-model/model.json');
+            model = await tf.loadLayersModel('./tensorflowjs-model2/model.json');
             status.innerHTML = 'Model Loaded Successfully  <span class="fa fa-check"></span>'
         }
 
@@ -38,7 +38,7 @@ let pconf = document.querySelector('.box-result p')
             // Function for invoking prediction
             let img = document.getElementById('image')
             let offset = tf.scalar(255)
-            let tensorImg =   tf.browser.fromPixels(img).resizeNearestNeighbor([300,300]).toFloat().expandDims();
+            let tensorImg =   tf.browser.fromPixels(img).resizeNearestNeighbor([200,200]).toFloat().expandDims();
             let tensorImg_scaled = tensorImg.div(offset)
             prediction = await model.predict(tensorImg_scaled).data();
            
