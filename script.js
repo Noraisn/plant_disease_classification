@@ -32,7 +32,7 @@ let pconf = document.querySelector('.box-result p')
             let status = document.querySelector('.init_status')
             status.innerHTML = 'Loading Model .... <span class="fa fa-spinner fa-spin"></span>'
             console.log('modelNOTloaded')
-            const model = await tf.loadLayersModel("https://guileless-baklava-906268.netlify.app/tensorflowjs-model2/model.json");
+            const model = await tf.loadLayersModel("tensorflowjs-model/model.json");
             console.log('modelLoaded', model)
             status.innerHTML = 'Model Loaded Successfully  <span class="fa fa-check"></span>'
         }
